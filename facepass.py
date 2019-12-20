@@ -20,7 +20,7 @@ import websockets
 import pymongo
 
 import cognitive_face as CF
-KEY = '877cb6db10dd4fb9b552f8fdd91c04c0'  # Replace with a valid Subscription Key here.
+KEY = ''  # Replace with a valid Subscription Key here.
 CF.Key.set(KEY)
 
 BASE_URL = 'https://eastasia.api.cognitive.microsoft.com/face/v1.0'  # Replace with your regional Base URL
@@ -43,7 +43,7 @@ def echo(websocket):
             print('Door Open')
 
         yield from websocket.send(frame)
-        dbx = dropbox.Dropbox('8zIZ9WGJgPAAAAAAAAAAJTfcFi3cCDrMvh780eLGNv4hQde8boaq_2VHKrvgHdNp')
+        dbx = dropbox.Dropbox('') #dropbox api key here
         useraccount = dbx.users_get_current_account()
         print(useraccount.email)
         for entry in dbx.files_list_folder('/pictures').entries:
